@@ -21,3 +21,8 @@ spring:
         url: jdbc:mysql://xxxxx:3306/ds2?characterEncoding=UTF-8&serverTimezone=UTC
         username: root
         password: root
+
+logging:
+  pattern:
+    file: time=%date{yyyy-MM-dd HH:mm:ss.SSS}, level=%p, thread=%t, logger=%logger{0}, %X, %replace(message=[%msg]){'[\r\n]+', ''}%n
+    console: time=%date{yyyy-MM-dd HH:mm:ss.SSS}, %highlight(level=%p), %green(thread=%t), %cyan(logger=%logger{0}), %X, %replace(message=[%msg]){'[\r\n]+', ''}%n
