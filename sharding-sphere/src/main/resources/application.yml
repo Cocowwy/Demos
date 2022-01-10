@@ -12,12 +12,12 @@ spring:
       ds1:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://49.235.232.3:3306/ds1?characterEncoding=UTF-8&serverTimezone=UTC
+        url: jdbc:mysql://xxxxx:3306/ds1?characterEncoding=UTF-8&serverTimezone=UTC
         username: root
         password: root
       ds2:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://49.235.232.3:3306/ds2?characterEncoding=UTF-8&serverTimezone=UTC
+        url: jdbc:mysql://xxxxx:3306/ds2?characterEncoding=UTF-8&serverTimezone=UTC
         username: root
         password: root
