@@ -1,11 +1,11 @@
 package cn.cocowwy.shardingsphere;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 
 @SpringBootApplication
-@MapperScan("cn.cocowwy.shardingsphere.mapper")
+@EnableJdbcRepositories
 public class ShardingSphereApplication {
 
     public static void main(String[] args) {
