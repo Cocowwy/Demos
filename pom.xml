@@ -27,6 +27,7 @@
         <lombok-version>1.18.16</lombok-version>
         <druid-version>1.1.18</druid-version>
         <sharding-jdbc-version>4.0.0-RC1</sharding-jdbc-version>
+        <guava-version>31.0.1-jre</guava-version>
     </properties>
 
     <modules>
@@ -35,6 +36,7 @@
 
     <dependencyManagement>
         <dependencies>
+
         </dependencies>
     </dependencyManagement>
 </project>
