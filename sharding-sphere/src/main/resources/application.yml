@@ -25,7 +25,7 @@ spring:
     sharding:
       tables:
         user:
-          # 数据源相关定义
+          # ds0~1-->user_0~user_2  ds1~1-->user_0~user_2  相当于两个库 六张表
           actual-data-nodes: ds$->{0..1}.user_$->{0..2},dss$->{0..1}.user_$->{0..2}
 
 
