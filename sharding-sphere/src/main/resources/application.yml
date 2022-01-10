@@ -21,6 +21,13 @@ spring:
         url: jdbc:mysql://xxxxx:3306/ds2?characterEncoding=UTF-8&serverTimezone=UTC
         username: root
         password: root
+    # 分库分表规则
+    sharding:
+      tables:
+        user:
+          # 数据源相关定义
+          actual-data-nodes: ds$->{0..1}.user_$->{0..2},dss$->{0..1}.user_$->{0..2}
+
 
 logging:
   pattern:
