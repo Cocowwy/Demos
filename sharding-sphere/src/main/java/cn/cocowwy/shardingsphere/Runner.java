@@ -1,5 +1,8 @@
 package cn.cocowwy.shardingsphere;
 
+import cn.cocowwy.shardingsphere.entities.User;
+import cn.cocowwy.shardingsphere.mapper.UserMapper;
+import com.baomidou.mybatisplus.core.toolkit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -15,10 +18,16 @@ import java.util.List;
 @Component
 public class Runner implements ApplicationRunner {
     @Autowired
-    private List<DataSource> dataSources;
+    private DataSource dataSource;
+
+    @Autowired
+    private UserMapper userMapper;
+
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        dataSources.stream().forEach(System.out::println);
+        System.out.println(("----- selectAll method test ------"));
+        List<User> userList = userMapper.selectList(null);
+        userList.forEach(System.out::println);
     }
 }
