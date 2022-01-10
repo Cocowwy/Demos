@@ -27,6 +27,16 @@ spring:
         user:
           # ds0~1-->user_0~user_2  ds1~1-->user_0~user_2  相当于两个库 六张表
           actual-data-nodes: ds$->{0..1}.user_$->{0..2},dss$->{0..1}.user_$->{0..2}
+          # 我的理解是根据id来分
+          table-strategy:
+            inline:
+              sharding-column: id
+              algorithm-expression: user_$->{id % 3}
+        order:
+          actual-data-nodes: ds$->{0..1}.order_$->{0..2},dss$->{0..1}.order_$->{0..2}
+          table-strategy:
+            inline:
+              sharding-column: id
 
 
 logging:
