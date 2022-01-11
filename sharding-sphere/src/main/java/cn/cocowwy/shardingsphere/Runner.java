@@ -1,8 +1,8 @@
 package cn.cocowwy.shardingsphere;
 
+import cn.cocowwy.shardingsphere.entities.Order;
 import cn.cocowwy.shardingsphere.entities.User;
-import cn.cocowwy.shardingsphere.mapper.UserMapper;
-import com.baomidou.mybatisplus.core.toolkit.Assert;
+import cn.cocowwy.shardingsphere.mapper.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -21,13 +21,24 @@ public class Runner implements ApplicationRunner {
     private DataSource dataSource;
 
     @Autowired
-    private UserMapper userMapper;
+    private OrderMapper orderMapper;
 
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println(("----- selectAll method test ------"));
-        List<User> userList = userMapper.selectList(null);
-        userList.forEach(System.out::println);
+//        List<Order> userList = orderMapper.selectList(null);
+        Order order1 = new Order();
+        order1.setNumber("123123");
+
+        Order order2 = new Order();
+        order2.setNumber("123124");
+
+        Order order3 = new Order();
+        order3.setNumber("123125");
+
+        orderMapper.insert(order1);
+        orderMapper.insert(order2);
+        orderMapper.insert(order3);
     }
 }
