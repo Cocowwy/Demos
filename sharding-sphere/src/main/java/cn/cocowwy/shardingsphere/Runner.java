@@ -2,7 +2,7 @@ package cn.cocowwy.shardingsphere;
 
 
 import cn.cocowwy.shardingsphere.entities.Order;
-import cn.cocowwy.shardingsphere.repositorie.OrderRepositorie;
+import cn.cocowwy.shardingsphere.repository.OrderRepositorie;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
@@ -31,7 +31,6 @@ public class Runner implements ApplicationRunner {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @Override
     public void run(ApplicationArguments args) throws JsonProcessingException {
         log.info("dataSource size : {}", dataSource.size());
         for (DataSource source : dataSource) {

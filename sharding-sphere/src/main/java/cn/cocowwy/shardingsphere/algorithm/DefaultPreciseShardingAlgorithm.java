@@ -22,7 +22,6 @@
 //    private ObjectMapper objectMapper;
 //
 //    @SneakyThrows
-//    @Override
 //    public String doSharding(Collection<String> collection, PreciseShardingValue<Long> preciseShardingValue) {
 //        log.info("availableTargetNames:" + objectMapper.writeValueAsString(collection)
 //                + ",shardingValues:" + objectMapper.writeValueAsString(preciseShardingValue));
