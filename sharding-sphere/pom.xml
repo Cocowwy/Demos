@@ -2,7 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <parent>
         <groupId>cocowwy.cn</groupId>
         <artifactId>springboot-demo</artifactId>
@@ -14,7 +25,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>sharding-sphere</name>
     <description>ShardingSphere demo</description>
-
 
     <dependencies>
         <dependency>
@@ -34,7 +44,12 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>30.1.1-jre</version>
+            <version>${guava-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>${hutool-version}</version>
         </dependency>
 
         <!--DB相关-->
@@ -55,7 +70,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.2.4</version>
+            <version>${druid-version}</version>
         </dependency>
         <!--web模块-->
         <dependency>

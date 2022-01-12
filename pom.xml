@@ -25,9 +25,11 @@
         <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
         <shardingsphere-version>5.0.0</shardingsphere-version>
         <lombok-version>1.18.16</lombok-version>
-        <druid-version>1.1.18</druid-version>
+        <druid-version>1.2.4</druid-version>
         <sharding-jdbc-version>4.0.0-RC1</sharding-jdbc-version>
         <guava-version>31.0.1-jre</guava-version>
+        <hutool-version>5.7.19</hutool-version>
+        <guava-version>30.1.1-jre</guava-version>
     </properties>
 
     <modules>

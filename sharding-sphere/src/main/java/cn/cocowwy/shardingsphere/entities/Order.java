@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.time.LocalDateTime;
+
 /**
  * @author Cocowwy
  * @create 2022-01-01-21:18
@@ -18,4 +20,7 @@ public class Order {
 
     @Column("number")
     private String number;
+
+    @Column("create_time")
+    private LocalDateTime createTime;
 }
