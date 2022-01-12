@@ -12,32 +12,32 @@ spring:
       ds0:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/ds1?characterEncoding=UTF-8&serverTimezone=UTC
+        url: jdbc:mysql://xxxxxxxx/ds0?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
         username: root
-        password: 142857
+        password: root
       ds1:
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/ds2?characterEncoding=UTF-8&serverTimezone=UTC
+        url: jdbc:mysql://xxxxxxxx/ds1?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
         username: root
-        password: 142857
+        password: root
     # 分库分表规则
     sharding:
       tables:
-        user:
-          # ds0~1-->user_0~user_2  ds1~1-->user_0~user_2  相当于两个库 六张表
-          actual-data-nodes: ds$->{0..1}.user_$->{0..2},dss$->{0..1}.user_$->{0..2}
-          table-strategy:
-            inline:
-              sharding-column: id
-              algorithm-expression: user_$->{id % 3}
         order:
-          actual-data-nodes: ds$->{0..1}.order_$->{0..2},dss$->{0..1}.order_$->{0..2}
+          actual-data-nodes: ds$->{0}.order_$->{2201..2203}
           table-strategy:
-            inline:
-              sharding-column: id
+            standard:
+              sharding-column: create_time
+              # 精确逻辑，插入走这个逻辑
+              precise-algorithm-class-name: cn.cocowwy.shardingsphere.algorithm.OrderPreciseShardingAlgorithm
+              # 范围逻辑，走这个
+              range-algorithm-class-name: cn.cocowwy.shardingsphere.algorithm.OrderRangeShardingAlgorithm
+    props:
+      sql.show: true  #是否打印sql
 
 logging:
   pattern:
     file: time=%date{yyyy-MM-dd HH:mm:ss.SSS}, level=%p, thread=%t, logger=%logger{0}, %X, %replace(message=[%msg]){'[\r\n]+', ''}%n
     console: time=%date{yyyy-MM-dd HH:mm:ss.SSS}, %highlight(level=%p), %green(thread=%t), %cyan(logger=%logger{0}), %X, %replace(message=[%msg]){'[\r\n]+', ''}%n
+
