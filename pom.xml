@@ -34,6 +34,7 @@
 
     <modules>
         <module>sharding-sphere</module>
+        <module>beautiful-code</module>
     </modules>
 
     <dependencyManagement>
