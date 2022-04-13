@@ -11,10 +11,10 @@
 
 
     <groupId>cocowwy.cn</groupId>
-    <artifactId>springboot-demo</artifactId>
+    <artifactId>Demos</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>springboot-demo</name>
+    <name>Demos</name>
 
     <description>Cocowwy的Demo库</description>
 
@@ -39,7 +39,6 @@
 
     <dependencyManagement>
         <dependencies>
-
         </dependencies>
     </dependencyManagement>
 </project>
