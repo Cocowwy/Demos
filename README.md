@@ -7,4 +7,4 @@
 ### :zap:**beatiful-code**
 一些优雅的代码来解耦
 
-### :zap: **Graphql-java**
+### :zap: **graphql-java**
