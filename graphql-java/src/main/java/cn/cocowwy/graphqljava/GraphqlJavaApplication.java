@@ -23,7 +23,17 @@ public class GraphqlJavaApplication {
     }
 }
 
-
+/**
+ * Http发送方式 --> CV 自Postman
+ *
+ * POST /graphql HTTP/1.1
+ * Host: localhost:8080
+ * Content-Type: application/json
+ * Content-Length: 129
+ *
+ * {"query":"{\r\n    bookById(id:\"book-1\"){\r\n        id\r\n        name\r\n        pageCount\r\n    }\r\n}\r\n","variables":{}}
+ *
+ */
 @Component
 class TestClient implements ApplicationRunner {
 
