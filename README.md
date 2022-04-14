@@ -10,4 +10,5 @@
 ### :zap: **graphql-java**
 **GraphQL** 的食用 **springboot版 包括client的调用**
 
-### :zap: **Java的 SPI 机制**
+### :zap: spi
+Java的 **SPI 机制** demo
