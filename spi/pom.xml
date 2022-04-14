@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cocowwy.cn</groupId>
+        <artifactId>Demos</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+
+    <artifactId>spi</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spi</name>
+    <description>spi机制demo</description>
+
+    <modules>
+        <module>spi-user</module>
+        <module>spi-provider-a</module>
+        <module>spi-provider-a</module>
+        <module>spi-api</module>
+    </modules>
+
+    <dependencies>
+        <!-- 选择A版本 -->
+        <dependency>
+            <groupId>cn.cocowwy</groupId>
+            <artifactId>spi-provider-a</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- 选择B版本 -->
+        <dependency>
+            <groupId>cn.cocowwy</groupId>
+            <artifactId>spi-provider-b</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!--暴露给厂商的接口-->
+        <dependency>
+            <groupId>cn.cocowwy</groupId>
+            <artifactId>spi-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

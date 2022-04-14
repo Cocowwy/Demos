@@ -36,7 +36,7 @@
         <module>sharding-sphere</module>
         <module>beautiful-code</module>
         <module>graphql-java</module>
-<!--        <module>spi</module>-->
+        <module>spi</module>
     </modules>
 
     <dependencyManagement>
