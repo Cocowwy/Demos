@@ -1,0 +1,13 @@
+package cn.cocowwy.mavencheckstyle;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MavenCheckstyleApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MavenCheckstyleApplication.class, args);
+    }
+
+}
