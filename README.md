@@ -15,3 +15,6 @@ Java的 **SPI 机制** demo
 
 ### :zap: privacy-mybatis
 mybatis 的拦截器 对指定字段进行**加密解密**
+
+### :zap: maven-checkstyle
+maven 代码检测插件
