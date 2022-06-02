@@ -1,7 +1,5 @@
-package cn.cocowwy.beautifulcode;
+package cn.cocowwy.beautifulcode.chain;
 
-import cn.cocowwy.beautifulcode.chain.OrderChain;
-import cn.cocowwy.beautifulcode.chain.OrderContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
