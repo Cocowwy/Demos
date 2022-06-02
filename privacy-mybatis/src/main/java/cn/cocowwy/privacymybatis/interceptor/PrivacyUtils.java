@@ -10,7 +10,7 @@ import java.util.List;
  * @since 2022/4/21
  */
 public class PrivacyUtils {
-    
+
     public static boolean isAnnotatedWithPrivacy(Field field) {
         return field.getAnnotation(Privacy.class) != null;
     }
