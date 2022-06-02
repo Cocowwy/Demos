@@ -1,6 +1,8 @@
 package cn.cocowwy.beautifulcode.subscribe.client;
 
-import cn.cocowwy.beautifulcode.subscribe.dto.Result;
+import cn.cocowwy.common.dto.Result;
+
+import java.util.List;
 
 /**
  * 假设当前接口为对外的RPC接口（如fegin的接口定义），通过订阅以及扩展字段，来简化IO的传输数据量
@@ -9,4 +11,5 @@ import cn.cocowwy.beautifulcode.subscribe.dto.Result;
  */
 
 public interface MemberClient {
+    Result<List<?>> findByList();
 }
