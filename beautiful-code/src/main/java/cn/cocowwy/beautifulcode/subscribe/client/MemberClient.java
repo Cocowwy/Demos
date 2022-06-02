@@ -1,5 +1,6 @@
 package cn.cocowwy.beautifulcode.subscribe.client;
 
+import cn.cocowwy.beautifulcode.subscribe.domain.rq.MemberListRequest;
 import cn.cocowwy.common.dto.Result;
 
 import java.util.List;
@@ -11,5 +12,5 @@ import java.util.List;
  */
 
 public interface MemberClient {
-    Result<List<?>> findByList();
+    Result<List<?>> list(MemberListRequest memberListRequest);
 }

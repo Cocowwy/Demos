@@ -6,6 +6,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -22,8 +23,8 @@ import java.util.Set;
  * @author cocowwy.cn
  * @create 2022-03-03-17:36
  */
-@Component
-public class Runner implements ApplicationRunner {
+//@Component
+public class RunnerCommand implements ApplicationRunner {
     @Autowired
     private OrderChain orderChain;
 
@@ -38,7 +39,9 @@ public class Runner implements ApplicationRunner {
         // 清洗数据
         OrderContext od = new OrderContext();
         od.setNumber("100002");
-        od.setCouponIds(Set.of(2L));
+        od.setCouponIds(new HashSet<Long>() {{
+            add(2L);
+        }});
         Map<String, Integer> skus = od.getSkus();
         skus.put("A01", 1);
         skus.put("A02", 2);

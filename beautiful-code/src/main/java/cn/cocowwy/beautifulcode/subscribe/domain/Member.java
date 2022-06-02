@@ -1,4 +1,4 @@
-package cn.cocowwy.beautifulcode.subscribe.dto;
+package cn.cocowwy.beautifulcode.subscribe.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,7 +13,7 @@ public class Member {
     private LocalDate birthday;
     private String address;
     private BigDecimal money;
-    private String idCardNo;
+    private String memberNo;
 
     public String getName() {
         return name;
@@ -55,11 +55,11 @@ public class Member {
         this.money = money;
     }
 
-    public String getIdCardNo() {
-        return idCardNo;
+    public String getMemberNo() {
+        return memberNo;
     }
 
-    public void setIdCardNo(String idCardNo) {
-        this.idCardNo = idCardNo;
+    public void setMemberNo(String memberNo) {
+        this.memberNo = memberNo;
     }
 }
