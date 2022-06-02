@@ -33,6 +33,7 @@
     </properties>
 
     <modules>
+        <module>common</module>
         <module>sharding-sphere</module>
         <module>beautiful-code</module>
         <module>graphql-java</module>
@@ -43,6 +44,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

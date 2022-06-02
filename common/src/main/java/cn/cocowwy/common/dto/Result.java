@@ -1,4 +1,4 @@
-package cn.cocowwy.beautifulcode.subscribe.dto;
+package cn.cocowwy.common.dto;
 
 import java.io.Serializable;
 
