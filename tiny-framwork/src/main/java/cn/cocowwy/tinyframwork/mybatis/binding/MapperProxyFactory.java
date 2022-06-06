@@ -1,7 +1,8 @@
 package cn.cocowwy.tinyframwork.mybatis.binding;
 
+import cn.cocowwy.tinyframwork.mybatis.session.SqlSession;
+
 import java.lang.reflect.Proxy;
-import java.util.Map;
 
 /**
  * 代理类工厂，封装代理类的生成
@@ -16,8 +17,8 @@ public class MapperProxyFactory<T> {
         this.mapperInterface = mapperInterface;
     }
 
-    public T newInstance(Map<String, String> sqlSession) {
-        final MapperProxy<T> mapperProxy = new MapperProxy<>(sqlSession, mapperInterface);
+    public T newInstance(SqlSession sqlSession) {
+        final MapperProxy<T> mapperProxy = new MapperProxy<>(null, mapperInterface);
         return (T) Proxy.newProxyInstance(mapperInterface.getClassLoader(), new Class[]{mapperInterface}, mapperProxy);
     }
 }

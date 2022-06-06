@@ -1,12 +1,12 @@
 package cn.cocowwy.tinyframwork.mybatis.binding;
 
+import cn.cocowwy.tinyframwork.mybatis.session.SqlSession;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.Map;
 
 /**
  * 实际代理 Mapper 的类，代理类的逻辑
@@ -16,10 +16,10 @@ import java.util.Map;
 @Slf4j
 public class MapperProxy<T> implements InvocationHandler, Serializable {
 
-    private final Map<String, String> sqlSession;
+    private final SqlSession sqlSession;
     private final Class<T> mapperInterface;
 
-    public MapperProxy(Map<String, String> sqlSession, Class<T> mapperInterface) {
+    public MapperProxy(SqlSession sqlSession, Class<T> mapperInterface) {
         this.sqlSession = sqlSession;
         this.mapperInterface = mapperInterface;
     }
