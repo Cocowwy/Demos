@@ -12,7 +12,7 @@
     <artifactId>tiny-framwork</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tiny-framwork</name>
-    <description>框架源码复刻</description>
+    <description>框架源码复刻与跟踪学习</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
