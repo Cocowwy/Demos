@@ -1,6 +1,6 @@
 package cn.cocowwy.tinyframwork.mybatis.session.defaults;
 
-import cn.cocowwy.tinyframwork.mybatis.binding.MapperRegistry;
+import cn.cocowwy.tinyframwork.mybatis.session.Configuration;
 import cn.cocowwy.tinyframwork.mybatis.session.SqlSession;
 
 /**
@@ -9,10 +9,10 @@ import cn.cocowwy.tinyframwork.mybatis.session.SqlSession;
  */
 public class DefaultSqlSession implements SqlSession {
 
-    private final MapperRegistry mapperRegistry;
+    private final Configuration configuration;
 
-    public DefaultSqlSession(MapperRegistry mapperRegistry) {
-        this.mapperRegistry = mapperRegistry;
+    public DefaultSqlSession(Configuration configuration) {
+        this.configuration = configuration;
     }
 
 
@@ -23,6 +23,6 @@ public class DefaultSqlSession implements SqlSession {
 
     @Override
     public <T> T getMapper(Class<T> type) {
-        return mapperRegistry.getMapper(type, this);
+        return configuration.getMapper(type, this);
     }
 }

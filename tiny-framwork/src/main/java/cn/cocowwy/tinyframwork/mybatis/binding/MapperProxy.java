@@ -31,8 +31,6 @@ public class MapperProxy<T> implements InvocationHandler, Serializable {
             return method.invoke(this, args);
         }
 
-        // 对 Mapper 接口走代理方法
-        log.info("代理Mapper接口 {}#{}#{}", mapperInterface, method.getName(), Arrays.toString(args));
         return String.format("代理Mapper接口 %s#%s#%s", mapperInterface, method.getName(), Arrays.toString(args));
     }
 }

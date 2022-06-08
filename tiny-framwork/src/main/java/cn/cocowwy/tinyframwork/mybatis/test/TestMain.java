@@ -3,7 +3,11 @@ package cn.cocowwy.tinyframwork.mybatis.test;
 import cn.cocowwy.tinyframwork.mybatis.binding.MapperRegistry;
 import cn.cocowwy.tinyframwork.mybatis.session.SqlSession;
 import cn.cocowwy.tinyframwork.mybatis.session.SqlSessionFactory;
-import cn.cocowwy.tinyframwork.mybatis.session.defaults.DefaultSqlSessionFactory;
+import cn.cocowwy.tinyframwork.mybatis.session.SqlSessionFactoryBuilder;
+import org.apache.ibatis.io.Resources;
+
+import java.io.IOException;
+import java.io.Reader;
 
 /**
  * @author cocowwy.cn
@@ -15,13 +19,15 @@ public class TestMain {
         MapperRegistry registry = new MapperRegistry();
         registry.addMappers("cn.cocowwy.tinyframwork.mybatis.test");
 
-        // new 了默认的 DefaultSqlSessionFactory
-        SqlSessionFactory sqlSessionFactory = new DefaultSqlSessionFactory(registry);
+        Reader reader = null;
+        try {
+            reader = Resources.getResourceAsReader("mybatis-config-datasource.xml");
+        } catch (IOException e) {
+            // mock.. ignore..
+        }
+//        根据maybatis的配置文件 生成 SqlSessionFactory 的配置文件
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-
-        // 通过 sqlSession 来获取 mapperRegistry 内部保存的 MapperProxyFactory --> 再获取代理对象
         UserMapeer mapper = sqlSession.getMapper(UserMapeer.class);
-        String s = mapper.queryUserNameByUerId(123L);
-        System.out.println(s);
     }
 }
