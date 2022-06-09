@@ -1,4 +1,4 @@
-package cn.cocowwy.beautifulcode.proxy;
+package cn.cocowwy.beautifulcode.proxy.jdk;
 
 /**
  * @author cocowwy.cn

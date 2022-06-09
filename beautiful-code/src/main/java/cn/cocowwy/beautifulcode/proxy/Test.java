@@ -1,6 +1,8 @@
 package cn.cocowwy.beautifulcode.proxy;
 
 import cn.cocowwy.beautifulcode.proxy.jdk.ProxyDo;
+import cn.cocowwy.beautifulcode.proxy.jdk.RealDo;
+import cn.cocowwy.beautifulcode.proxy.jdk.Say;
 
 import java.lang.reflect.Proxy;
 
