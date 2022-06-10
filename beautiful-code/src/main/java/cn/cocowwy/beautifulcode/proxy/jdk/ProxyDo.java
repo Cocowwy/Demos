@@ -19,7 +19,6 @@ public class ProxyDo implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("do proxy way..");
         // 调用真是对象的方法
-        method.invoke(real, args);
-        return null;
+        return method.invoke(real, args);
     }
 }

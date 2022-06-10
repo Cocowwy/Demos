@@ -10,8 +10,9 @@ import java.lang.reflect.Proxy;
  * @author cocowwy.cn
  * @create 2022-05-05-11:45
  */
-public class Test {
+public class Test4Jdk {
     public static void main(String[] args) {
+        // jdk
         RealDo realDo = new RealDo();
         ProxyDo proxyDo = new ProxyDo(realDo);
         Say o = (Say)Proxy.newProxyInstance(realDo.getClass().getClassLoader(), realDo.getClass().getInterfaces(), proxyDo);
