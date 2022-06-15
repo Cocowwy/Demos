@@ -13,8 +13,10 @@ public class TinyFramworkApplication {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
         beanFactory.registerBeanDefinition("userService", beanDefinition);
-        UserService userService = (UserService)beanFactory.getBean("userService");
-        userService.doSth();
+//        UserService u1 = (UserService)beanFactory.getBean("userService");
+        UserService u2 = (UserService)beanFactory.getBean("userService","Cocowwy");
+//         u1.doSth();
+        u2.doSth();
     }
 }
 
