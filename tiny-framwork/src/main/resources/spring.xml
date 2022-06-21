@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+    <bean id="userDao" class="cn.cocowwy.tinyframwork.UserDao"/>
+
+    <bean id="userService" class="cn.cocowwy.tinyframwork.UserService">
+        <property name="uId" value="1"/>
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+</beans>

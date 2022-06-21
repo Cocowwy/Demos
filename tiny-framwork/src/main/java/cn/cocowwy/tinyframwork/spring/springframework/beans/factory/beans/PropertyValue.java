@@ -6,6 +6,7 @@ package cn.cocowwy.tinyframwork.spring.springframework.beans.factory.beans;
  */
 public class PropertyValue {
     private final String name;
+    // BeanReference 则表示是bean引用
     private final Object value;
 
     public PropertyValue(String name, Object value) {

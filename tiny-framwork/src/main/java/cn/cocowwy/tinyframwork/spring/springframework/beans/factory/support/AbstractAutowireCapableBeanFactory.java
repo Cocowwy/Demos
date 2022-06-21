@@ -3,10 +3,9 @@ package cn.cocowwy.tinyframwork.spring.springframework.beans.factory.support;
 import cn.cocowwy.tinyframwork.spring.springframework.BeanDefinition;
 import cn.cocowwy.tinyframwork.spring.springframework.beans.factory.beans.PropertyValue;
 import cn.cocowwy.tinyframwork.spring.springframework.beans.factory.beans.PropertyValues;
+import cn.cocowwy.tinyframwork.spring.springframework.beans.factory.config.BeanReference;
 import cn.hutool.core.bean.BeanUtil;
 import lombok.SneakyThrows;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanReference;
 
 import java.lang.reflect.Constructor;
 
@@ -17,6 +16,7 @@ import java.lang.reflect.Constructor;
  * @create 2022-05-05-11:45
  */
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory {
+
     private final InstantiationStrategy instantiationStrategy = new CglibSubclassingInstantiationStrategy();
 
     @Override
@@ -61,6 +61,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     protected void applyPropertyValues(String beanName, Object bean, BeanDefinition beanDefinition) {
         try {
             PropertyValues propertyValues = beanDefinition.getPropertyValues();
+            if (propertyValues == null) {
+                return;
+            }
             for (PropertyValue propertyValue : propertyValues.getPropertyValues()) {
 
                 String name = propertyValue.getName();
