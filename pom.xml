@@ -41,6 +41,7 @@
         <module>privacy-mybatis</module>
         <module>maven-checkstyle</module>
         <module>tiny-framwork</module>
+        <module>java-agent</module>
     </modules>
 
     <dependencyManagement>
