@@ -18,6 +18,13 @@ public class AgentDemo {
      * @param inst
      */
     public static void premain(String agentArgs, Instrumentation inst) {
+        System.out.println("do premain");
+    }
 
+    /**
+     * 优先级比上面的方法低，即存在上面的方法的情况下不执行下面的方法
+     * @param agentOps
+     */
+    public static void premain(String agentOps) {
     }
 }
