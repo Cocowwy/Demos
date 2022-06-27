@@ -22,16 +22,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <archive>
-                        <manifestEntries>
-                            src/META-INF/MANIFEST.MF
-                        </manifestEntries>
+                        <manifest>
+                            src/main/resources/META-INF/MANIFEST.MF
+                        </manifest>
                     </archive>
                 </configuration>
-
                 <executions>
                     <execution>
                         <goals>
@@ -45,4 +45,3 @@
     </build>
 
 </project>
-<!--https://blog.csdn.net/baidu_28340727/article/details/122688423-->
