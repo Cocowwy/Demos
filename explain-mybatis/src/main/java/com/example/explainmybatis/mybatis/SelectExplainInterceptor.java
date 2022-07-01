@@ -44,7 +44,7 @@ import static java.util.stream.Collectors.toList;
 @Intercepts({@Signature(method = "prepare", type = StatementHandler.class, args = {Connection.class, Integer.class})})
 public class SelectExplainInterceptor implements Interceptor {
 
-    private static final String CLASS_PREFIX = "com.sexytea.hr.server";
+    private static final String CLASS_PREFIX = "com.xxxx";
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
