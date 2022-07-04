@@ -16,8 +16,22 @@ Java的 **SPI 机制** demo
 ### :zap: privacy-mybatis
 mybatis 的拦截器 对指定字段进行**加密解密**
 
+
+### :zap:**explain-mybatis**
+mybatis 的拦截器 对sql的索引命中情况进行日志打印
+
 ### :zap: maven-checkstyle
 maven 代码检测插件
 
 ### :zap: tiny-framwork
 源码复刻：spring，mybatis等
+
+### :zap: sentinel
+sentinel的简易 demo
+
+### :zap: java-agent
+java agent demo
+
+### :zap: java-juc
+juc 包 下的一些简单demo
+
