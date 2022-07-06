@@ -1,2 +1,9 @@
 rocketmq:
-  
+  name-server: 49.235.232.3:9876
+  producer:
+    group: producer-group
+    send-message-timeout: 3000
+    compress-message-body-threshold: 1024
+    max-message-size: 1024
+    retry-times-when-send-async-failed: 2
+    retry-times-when-send-failed: 2

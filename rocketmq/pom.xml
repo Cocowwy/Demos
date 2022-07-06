@@ -33,6 +33,12 @@
             <artifactId>rocketmq-spring-boot-starter</artifactId>
             <version>2.2.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>cn.cocowwy</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
