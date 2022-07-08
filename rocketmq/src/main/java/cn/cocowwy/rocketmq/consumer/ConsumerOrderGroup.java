@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class ConsumerOrderGroup {
 
     @Service
-    @RocketMQMessageListener(topic = "order-message", consumerGroup = "pay-group")
+    @RocketMQMessageListener(topic = "TEST", consumerGroup = "pay-group")
     public class ConsumerOrder4Pay implements RocketMQListener<OrderDTO> {
         @Override
         public void onMessage(OrderDTO orderDTO) {
@@ -23,7 +23,7 @@ public class ConsumerOrderGroup {
     }
 
     @Service
-    @RocketMQMessageListener(topic = "order-message", consumerGroup = "order-status-group")
+    @RocketMQMessageListener(topic = "TEST", consumerGroup = "order-status-group")
     public class Consumer1OrderStatus implements RocketMQListener<OrderDTO> {
         @Override
         public void onMessage(OrderDTO orderDTO) {
@@ -32,7 +32,7 @@ public class ConsumerOrderGroup {
     }
 
     @Service
-    @RocketMQMessageListener(topic = "order-message", consumerGroup = "order-status-group")
+    @RocketMQMessageListener(topic = "TEST", consumerGroup = "order-status-group")
     public class Consumer2OrderStatus implements RocketMQListener<OrderDTO> {
         @Override
         public void onMessage(OrderDTO orderDTO) {

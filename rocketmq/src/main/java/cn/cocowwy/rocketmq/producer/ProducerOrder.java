@@ -30,6 +30,6 @@ public class ProducerOrder implements CommandLineRunner {
 
         //send spring message
         log.info("send mq msg: {}", orderDTO);
-        rocketMQTemplate.send("order-message", MessageBuilder.withPayload(orderDTO).build());
+        rocketMQTemplate.send("TEST", MessageBuilder.withPayload(orderDTO).build());
     }
 }
