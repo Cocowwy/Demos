@@ -11,5 +11,17 @@ public class Sugar {
 
         // 2的三次方
         System.out.println(1 << 3);
+
+        // break 到 标志的地方；
+        retry:
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (j == 3) {
+                    break retry;
+                }
+                System.out.println(j);
+            }
+        }
     }
+
 }
