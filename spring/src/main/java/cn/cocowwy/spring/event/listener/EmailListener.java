@@ -1,6 +1,6 @@
 package cn.cocowwy.spring.event.listener;
 
-import cn.cocowwy.spring.event.UserRegisterEvent;
+import cn.cocowwy.spring.event.evt.UserRegisterEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.annotation.Order;
 import org.springframework.scheduling.annotation.Async;

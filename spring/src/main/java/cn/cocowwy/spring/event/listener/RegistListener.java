@@ -1,6 +1,6 @@
 package cn.cocowwy.spring.event.listener;
 
-import cn.cocowwy.spring.event.UserRegisterEvent;
+import cn.cocowwy.spring.event.evt.UserRegisterEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 

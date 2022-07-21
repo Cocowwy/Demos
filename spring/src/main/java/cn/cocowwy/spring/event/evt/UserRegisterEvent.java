@@ -1,4 +1,4 @@
-package cn.cocowwy.spring.event;
+package cn.cocowwy.spring.event.evt;
 
 import org.springframework.context.ApplicationEvent;
 

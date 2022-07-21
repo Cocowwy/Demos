@@ -1,6 +1,6 @@
 package cn.cocowwy.spring.event.listener;
 
-import cn.cocowwy.spring.event.UserRegisterEvent;
+import cn.cocowwy.spring.event.evt.UserRegisterEvent;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.springframework.context.ApplicationListener;
