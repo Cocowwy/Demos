@@ -8,7 +8,7 @@
 摘抄的一些比较优雅的业务代码
 
 ### :zap: **graphql-java**
-**GraphQL** 的食用 **springboot版 包括client的调用**
+**GraphQL** 的食用 **springboot版 包括client的调用 ， spring模块下有spring版的graphql使用**
 
 ### :zap: spi
 Java的 **SPI 机制** demo
