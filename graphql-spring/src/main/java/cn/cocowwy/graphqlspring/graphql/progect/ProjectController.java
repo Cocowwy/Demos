@@ -1,4 +1,4 @@
-package cn.cocowwy.springgraphql.graphql.progect;
+package cn.cocowwy.graphqlspring.graphql.progect;
 
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;

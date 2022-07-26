@@ -1,4 +1,4 @@
-package cn.cocowwy.springgraphql.graphql.progect;
+package cn.cocowwy.graphqlspring.graphql.progect;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.hateoas.CollectionModel;
@@ -42,6 +42,3 @@ public class SpringProjectsClient {
     }
 
 }
-Footer
-        © 2022GitHub,Inc.
-        Footer navigation

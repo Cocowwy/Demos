@@ -1,4 +1,4 @@
-package cn.cocowwy.springgraphql.graphql.greting;
+package cn.cocowwy.graphqlspring.graphql.greting;
 
 import org.springframework.graphql.execution.ThreadLocalAccessor;
 import org.springframework.stereotype.Component;

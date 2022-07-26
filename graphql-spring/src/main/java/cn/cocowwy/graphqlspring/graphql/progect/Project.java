@@ -1,4 +1,4 @@
-package cn.cocowwy.springgraphql.graphql.progect;
+package cn.cocowwy.graphqlspring.graphql.progect;
 
 import lombok.Data;
 

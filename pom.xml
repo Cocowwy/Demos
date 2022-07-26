@@ -37,11 +37,13 @@
         <module>sharding-sphere</module>
         <module>beautiful-code</module>
         <module>graphql-java</module>
+        <module>graphql-spring</module>
         <module>spi</module>
         <module>privacy-mybatis</module>
         <module>maven-checkstyle</module>
         <module>tiny-framwork</module>
         <module>java-agent</module>
+        <module>spring</module>
     </modules>
 
     <dependencyManagement>
