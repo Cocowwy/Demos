@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
  * Fock/Join
  * 用于并行执行把一个大任务拆成多个小任务并行执行，最终汇总每个小任务结果得到大任务结果的特殊任务
  *
+ *  ForkJoinPool的invoke是同步阻塞，excute是异步
+ *
  * @author cocowwy.cn
  * @create 2022-05-05-11:45
  */
