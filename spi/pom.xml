@@ -17,7 +17,7 @@
     <modules>
         <module>spi-user</module>
         <module>spi-provider-a</module>
-        <module>spi-provider-a</module>
+        <module>spi-provider-b</module>
         <module>spi-api</module>
     </modules>
 
