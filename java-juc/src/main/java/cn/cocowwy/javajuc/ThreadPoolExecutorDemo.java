@@ -10,6 +10,13 @@ import java.util.concurrent.*;
  * TIDYING： 所有任务都已种植，workerCount 为0零，转换到状态TIDYING的线程将运行terminate()钩子方法  高三位 010
  * TERMINATED：线程池彻底种植，就变成TERMINATED状态，执行完terminated()之后，就会由 TIDYING->TERMINATED  高三位 011
  *
+ * 线程池使用:
+ * 首先检测线程池运行状态，如果不是RUNNING，则直接拒绝，线程池要保证在RUNNING的状态下执行任务。
+ * 如果workerCount < corePoolSize，则创建并启动一个线程来执行新提交的任务。
+ * 如果workerCount >= corePoolSize，且线程池内的阻塞队列未满，则将任务添加到该阻塞队列中。
+ * 如果workerCount >= corePoolSize && workerCount < maximumPoolSize，且线程池内的阻塞队列已满，则创建并启动一个线程来执行新提交的任务。
+ * 如果workerCount >= maximumPoolSize，并且线程池内的阻塞队列已满, 则根据拒绝策略来处理该任务, 默认的处理方式是直接抛异常。
+ *
  * @author cocowwy.cn
  * @create 2022-05-05-11:45
  */
