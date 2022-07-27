@@ -3,7 +3,6 @@ package cn.cocowwy.spring.event.evt;
 import org.springframework.context.ApplicationEvent;
 
 import java.math.BigDecimal;
-import java.time.Clock;
 
 /**
  * @author cocowwy.cn
@@ -32,10 +31,6 @@ public class UserRegisterEvent extends ApplicationEvent {
 
     public UserRegisterEvent(Object source) {
         super(source);
-    }
-
-    public UserRegisterEvent(Object source, Clock clock) {
-        super(source, clock);
     }
 
     public String getUserName() {

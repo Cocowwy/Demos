@@ -1,7 +1,7 @@
 package cn.cocowwy.spring.event.listener;
 
 import cn.cocowwy.spring.event.evt.UserRegisterEvent;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import cn.hutool.json.JSONUtil;
 import lombok.SneakyThrows;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.annotation.Order;
@@ -18,8 +18,6 @@ import java.util.Map;
 @Service
 @Order(1)
 public class WalletListener implements ApplicationListener<UserRegisterEvent> {
-    private static final ObjectMapper om = new ObjectMapper();
-
     private static Map<String, BigDecimal> usernameMapWallet = new HashMap<>();
 
     @SneakyThrows
@@ -31,6 +29,6 @@ public class WalletListener implements ApplicationListener<UserRegisterEvent> {
             usernameMapWallet.put(event.getUserName(), event.getWallet());
         }
 
-        System.out.println("注册账户成功，账户信息：" + om.writeValueAsString(usernameMapWallet));
+        System.out.println("注册账户成功，账户信息：" + JSONUtil.toJsonStr(usernameMapWallet));
     }
 }

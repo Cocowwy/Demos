@@ -52,11 +52,50 @@
                 <artifactId>common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
-
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok-version}</version>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>sharding-sphere</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>beautiful-code</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>graphql-java</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>cn.cocowwy</groupId>-->
+<!--                <artifactId>spi</artifactId>-->
+<!--                <version>0.0.1-SNAPSHOT</version>-->
+<!--            </dependency>-->
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>privacy-mybatis</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>maven-checkstyle</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>tiny-framwork</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>cn.cocowwy</groupId>-->
+<!--                <artifactId>java-agent</artifactId>-->
+<!--                <version>0.0.1-SNAPSHOT</version>-->
+<!--            </dependency>-->
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>spring</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
