@@ -45,12 +45,3 @@ public class CountDownLatchDemo {
         }
     }
 }
-
-/**
- * 实现功能  同时从多个数据源进行请求，先返回数据就继续往后执行代码
- */
-class CountDownLatchDemo1 {
-    public static void main(String[] args) {
-
-    }
-}
