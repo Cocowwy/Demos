@@ -43,6 +43,7 @@
         <module>tiny-framwork</module>
         <module>java-agent</module>
         <module>spring</module>
+        <module>arthas</module>
     </modules>
 
     <dependencyManagement>
