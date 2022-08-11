@@ -1,7 +1,6 @@
 package cn.cocowwy.javajuc;
 
 import java.util.concurrent.Exchanger;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Exchanger 就是线程之间的数据交换器，只能用于两个线程之间的数据交换
@@ -40,53 +39,53 @@ public class ExchangerDemo {
     }
 }
 
-class ExchangeDemo1 {
-    /**
-     * 实现功能
-     * 主线程发布一个任务
-     * 多个线程去执行任务，哪个最先完成，就接着执行主线程
-     * <p>
-     * 注意 exchange 的时候需要加入超时时间
-     */
-    public static void main(String[] args) throws InterruptedException {
-        Exchanger<String> exchanger = new Exchanger<>();
-
-        new Thread(() -> {
-            String data = "Thread-1's data";
-            try {
-                // 模拟 RPC
-                Thread.sleep(1000l);
-                String exchange = exchanger.exchange(data, 3, TimeUnit.SECONDS);
-                System.out.println("Thread 1 done，get main data " + exchange);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }).start();
-        new Thread(() -> {
-            String data = "Thread-2's data";
-            try {
-                // 模拟 RPC
-                Thread.sleep(1200l);
-                String exchange = exchanger.exchange(data, 3, TimeUnit.SECONDS);
-                System.out.println("Thread 2 done，get main data " + exchange);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }).start();
-        new Thread(() -> {
-            String data = "Thread-3's data";
-            try {
-                // 模拟 RPC
-                Thread.sleep(1500l);
-                String exchange = exchanger.exchange(data, 3, TimeUnit.SECONDS);
-                System.out.println("Thread 3 done，get main data " + exchange);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }).start();
-
-
-        System.out.println("ok   " + exchanger.exchange("done"));
-
-    }
-}
+//class ExchangeDemo1 {
+//    /**
+//     * 实现功能
+//     * 主线程发布一个任务
+//     * 多个线程去执行任务，哪个最先完成，就接着执行主线程
+//     * <p>
+//     * 注意 exchange 的时候需要加入超时时间
+//     */
+//    public static void main(String[] args) throws InterruptedException {
+//        Exchanger<String> exchanger = new Exchanger<>();
+//
+//        new Thread(() -> {
+//            String data = "Thread-1's data";
+//            try {
+//                // 模拟 RPC
+//                Thread.sleep(1000l);
+//                String exchange = exchanger.exchange(data, 3, TimeUnit.SECONDS);
+//                System.out.println("Thread 1 done，get main data " + exchange);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }).start();
+//        new Thread(() -> {
+//            String data = "Thread-2's data";
+//            try {
+//                // 模拟 RPC
+//                Thread.sleep(1200l);
+//                String exchange = exchanger.exchange(data, 3, TimeUnit.SECONDS);
+//                System.out.println("Thread 2 done，get main data " + exchange);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }).start();
+//        new Thread(() -> {
+//            String data = "Thread-3's data";
+//            try {
+//                // 模拟 RPC
+//                Thread.sleep(1500l);
+//                String exchange = exchanger.exchange(data, 3, TimeUnit.SECONDS);
+//                System.out.println("Thread 3 done，get main data " + exchange);
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }).start();
+//
+//
+//        System.out.println("ok   " + exchanger.exchange("done"));
+//
+//    }
+//}
