@@ -21,9 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class FutureTaskDemo {
     @SneakyThrows
     public static void main(String[] args) {
-        ThreadPoolExecutorDemo.threadPoolExecutor.submit(()->{
-        });
-
         FutureTask<Integer> futureTask = new FutureTask<>(() -> {
             Thread.sleep(RandomUtil.randomLong(6000L, 10000L));
             return 1 + 2;
