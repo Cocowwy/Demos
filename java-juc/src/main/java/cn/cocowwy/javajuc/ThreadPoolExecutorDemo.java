@@ -21,6 +21,14 @@ import java.util.concurrent.*;
  * @create 2022-05-05-11:45
  */
 public class ThreadPoolExecutorDemo {
+    public static final ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
+            1,
+            2,
+            3,
+            TimeUnit.SECONDS,
+            new LinkedBlockingDeque<>(1),
+            Executors.defaultThreadFactory(), new MyRejectedExecutionHandler());
+
     public static void main(String[] args) {
         /**
          * {@link ThreadPoolExecutor#ThreadPoolExecutor(int, int, long, java.util.concurrent.TimeUnit, java.util.concurrent.BlockingQueue, java.util.concurrent.ThreadFactory, java.util.concurrent.RejectedExecutionHandler)}
@@ -41,13 +49,6 @@ public class ThreadPoolExecutorDemo {
          *              - DiscardPolicy 直接丢弃任务
          */
 
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
-                1,
-                2,
-                3,
-                TimeUnit.SECONDS,
-                new LinkedBlockingDeque<>(1),
-                Executors.defaultThreadFactory(), new MyRejectedExecutionHandler());
 
         // 按道理 只会执行3个 （max2个（其中一个是core），还有一个在阻塞队列，其余任务均被抛弃）
         for (int i = 0; i < 20; i++) {
