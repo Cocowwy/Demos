@@ -52,8 +52,6 @@
             <artifactId>guava</artifactId>
             <version>${guava-version}</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.mountcloud</groupId>
             <artifactId>graphql-client</artifactId>
