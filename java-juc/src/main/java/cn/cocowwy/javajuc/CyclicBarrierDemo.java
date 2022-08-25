@@ -4,8 +4,7 @@ import cn.hutool.core.util.RandomUtil;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * CyclicBarrier可以使一定数量的线程反复地在栅栏位置处汇集。当线程到达栅栏位置时将调用await方法，
@@ -17,8 +16,82 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 public class CyclicBarrierDemo {
+
+    public static final ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
+            2,
+            4,
+            3,
+            TimeUnit.SECONDS,
+            new LinkedBlockingDeque<>(1),
+            Executors.defaultThreadFactory(), new ThreadPoolExecutorDemo.MyRejectedExecutionHandler());
     @SneakyThrows
     public static void main(String[] args) {
+        /**
+         * 使用
+         */
+        test1();
+
+        /**
+         * 测试：
+         * 核心线程为2  添加的循环栅栏大于核心线程，导致死锁等待
+         */
+        test2();
+    }
+
+    private static void test2() {
+        CyclicBarrier cb = new CyclicBarrier(3);
+        System.out.println("start..");
+        threadPoolExecutor.submit(() -> {
+            System.out.println("向线程池提交 A");
+            try {
+                Thread.sleep(5000L);
+                cb.await(5, TimeUnit.SECONDS);
+                System.out.println("A");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } catch (BrokenBarrierException e) {
+                throw new RuntimeException(e);
+            } catch (TimeoutException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("");
+        });
+
+        threadPoolExecutor.submit(() -> {
+            try {
+                System.out.println("向线程池提交 B");
+                Thread.sleep(5000L);
+                cb.await(5, TimeUnit.SECONDS);
+                System.out.println("B");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } catch (BrokenBarrierException e) {
+                throw new RuntimeException(e);
+            } catch (TimeoutException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("");
+        });
+
+        threadPoolExecutor.submit(() -> {
+            try {
+                System.out.println("向线程池提交 C");
+                cb.await(5, TimeUnit.SECONDS);
+                System.out.println("C");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } catch (BrokenBarrierException e) {
+                throw new RuntimeException(e);
+            } catch (TimeoutException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("C");
+        });
+
+        System.out.println("main exit");
+    }
+
+    private static void test1() {
         CyclicBarrier cbr = new CyclicBarrier(10, () -> {
             System.out.println("CyclicBarrier is open");
         });
@@ -38,3 +111,5 @@ public class CyclicBarrierDemo {
         }
     }
 }
+
+
