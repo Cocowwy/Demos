@@ -18,7 +18,7 @@ public class TransactionService {
     public void test() {
 
         // 一系列DB操作...
-
+        // xxxMapper.insert(..);
         doSthWhenCommit();
     }
 
@@ -29,6 +29,7 @@ public class TransactionService {
                 @Override
                 public void afterCommit() {
                     // do sth.
+                    // mq.push(msg)
                 }
             });
         }
