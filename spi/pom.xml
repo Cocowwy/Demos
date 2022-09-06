@@ -9,6 +9,8 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+    <packaging>pom</packaging>
+
     <artifactId>spi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spi</name>
