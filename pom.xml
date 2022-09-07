@@ -37,6 +37,7 @@
         <module>beautiful-code</module>
         <module>graphql-java</module>
         <module>graphql-spring</module>
+        <module>grpc-java</module>
         <module>spi</module>
         <module>privacy-mybatis</module>
         <module>maven-checkstyle</module>
