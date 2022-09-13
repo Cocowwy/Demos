@@ -1,4 +1,4 @@
-package cn.cocowwy.spring.event.transaction;
+package cn.cocowwy.spring.transaction;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
