@@ -12,6 +12,7 @@ import java.util.function.Supplier;
 
 /**
  * 保证异步操作在事务提交之后进行，实现该接口 调用afterCommitDo即可
+ * 注意 如果未开启事务 调用afterCommitDo会报异常 transaction not active 即事务未激活
  *
  * @author cocowwy.cn
  * @create 2022-05-05-11:45
