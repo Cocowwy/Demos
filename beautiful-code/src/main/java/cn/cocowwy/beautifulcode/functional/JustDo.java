@@ -1,4 +1,4 @@
-package cn.cocowwy.spring.functional;
+package cn.cocowwy.beautifulcode.functional;
 
 /**
  * @author cocowwy.cn
