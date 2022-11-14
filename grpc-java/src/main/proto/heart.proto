@@ -1,0 +1,26 @@
+syntax = "proto3"; // 协议版本
+
+// 选项配置
+option java_package = "cn.cocowwy.heart";
+option java_outer_classname = "GRPCHeart";
+option java_multiple_files = true;
+
+// 定义包名
+package cn.cocowwy.heart;
+
+// 定义请求体
+message HeartReq {
+  int32 serverId = 1;
+  string serverName = 2;
+  int32 timestamp = 3;
+}
+
+// 定义响应体
+message HeartResp {
+  bool res = 1;
+}
+
+// 定义处理心跳的方法
+service HeartReportService {
+  rpc handleHeart (HeartReq) returns (HeartResp) {}
+}

@@ -1,6 +1,6 @@
 package cn.cocowwy.grpcjava;
 
-import cn.cocowwy.grpcserver.api.RPCDateRequest;
+import cn.cocowwy.grpcjava.heartdemo.api.RPCDateRequest;
 import cn.cocowwy.grpcserver.api.RPCDateServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -26,6 +26,8 @@ public class GrpcClient {
             System.out.println("build:" + build + "...");
             RPCDateServiceGrpc.RPCDateServiceBlockingStub stub = RPCDateServiceGrpc.newBlockingStub(channel);
             stub.getDate(build);
+
+
             while (true) {
                 Scanner scanner = new Scanner(System.in);
                 String next = scanner.next();

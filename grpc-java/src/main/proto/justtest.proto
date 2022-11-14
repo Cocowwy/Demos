@@ -26,3 +26,5 @@ message RPCDateRequest {
 message RPCDateResponse {
   string serverDate = 1;
 }
+
+// 生成文件 在Demos文件夹下执行 mvn compile即可
