@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.cocowwy</groupId>
-    <artifactId>tiny-framwork</artifactId>
+    <artifactId>tiny-framework</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tiny-framwork</name>
     <description>框架源码复刻与跟踪学习</description>
