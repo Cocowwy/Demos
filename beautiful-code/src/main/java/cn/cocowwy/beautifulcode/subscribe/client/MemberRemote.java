@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class MemberRemote implements MemberClient {
 
     // mock data
-    private static Map<String, Member> DATAS = new HashMap<>(150);
+    private static final Map<String, Member> DATAS = new HashMap<>(150);
 
     @PostConstruct
     void initData() {
