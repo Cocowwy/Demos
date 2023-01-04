@@ -14,7 +14,7 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
  */
 @Service
 public class PlatformTransactionManagerDemo {
-    @Autowired
+    @Autowired(required = false)
     private PlatformTransactionManager txManager;
 
     void springPlatformTransactionManager() {
