@@ -3,11 +3,14 @@ package cn.cocowwy.spring.transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.DefaultTransactionAttribute;
 import org.springframework.transaction.support.TransactionSynchronization;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
+
+import java.util.Objects;
 
 /**
  * @author <a href="https://github.com/Cocowwy">Cocowwy</a>
@@ -18,10 +21,9 @@ public class TransactionHelper {
     @Autowired
     private DataSourceTransactionManager dataSourceTransactionManager;
 
-    public TransactionStatus begin() {
-        TransactionStatus transaction = dataSourceTransactionManager.
-                getTransaction(new DefaultTransactionAttribute());
-        return transaction;
+    public TransactionStatus begin(TransactionDefinition transactionDefinition) {
+        return dataSourceTransactionManager.getTransaction(Objects.isNull(transactionDefinition)
+                ? new DefaultTransactionAttribute() : transactionDefinition);
     }
 
     public void commit(TransactionStatus transaction) {
