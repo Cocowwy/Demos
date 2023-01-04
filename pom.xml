@@ -42,10 +42,12 @@
         <module>privacy-mybatis</module>
         <module>reactor</module>
         <module>maven-checkstyle</module>
-        <module>tiny-framwork</module>
+        <module>tiny-framework</module>
         <module>java-agent</module>
         <module>spring</module>
         <module>arthas</module>
+        <module>java-jdk</module>
+        <module>funny-opensource</module>
     </modules>
 
     <dependencyManagement>
@@ -87,7 +89,7 @@
             </dependency>
             <dependency>
                 <groupId>cn.cocowwy</groupId>
-                <artifactId>tiny-framwork</artifactId>
+                <artifactId>tiny-framework</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 <!--            <dependency>-->
@@ -98,6 +100,11 @@
             <dependency>
                 <groupId>cn.cocowwy</groupId>
                 <artifactId>spring</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>java-jdk</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
